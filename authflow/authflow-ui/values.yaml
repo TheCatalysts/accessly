@@ -1,0 +1,17 @@
+image:
+  repository: your-docker-repo/vue-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: vue-app.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
