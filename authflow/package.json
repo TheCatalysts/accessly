@@ -1,7 +1,7 @@
 {
   "name": "authflow",
   "private": true,
-  "version": "0.0.0",
+  "version": "v1.22.22",
   "type": "module",
   "scripts": {
     "dev": "vite",
