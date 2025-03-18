@@ -101,8 +101,8 @@ EXPOSE 3000
 ```
 Build & run:
 ```sh
-docker build -t vue-login-app .
-docker run -p 3000:3000 vue-login-app
+docker build -t authflow-app .
+docker run -p 3000:3000 authflow-app
 ```
 
 #### 7. Deploy to Azure AKS
@@ -128,9 +128,9 @@ jobs:
         run: npm run test
       - name: Build & Deploy
         run: |
-          docker build -t vue-login-app .
-          docker tag vue-login-app myregistry.azurecr.io/vue-login-app:latest
-          docker push myregistry.azurecr.io/vue-login-app:latest
+          docker build -t authflow-app .
+          docker tag authflow-app myregistry.azurecr.io/authflow-app:latest
+          docker push myregistry.azurecr.io/authflow-app:latest
 ```
 
 ### Conclusion
