@@ -15,14 +15,20 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Navigate to authflow Directory
+        run: cd authflow
+
       - name: Install Dependencies
         run: yarn install
+        working-directory: ./authflow
 
       - name: Run Tests
         run: yarn test
+        working-directory: ./authflow
 
       - name: Build App
         run: yarn build
+        working-directory: ./authflow
 
   deploy:
     name: Deploy to Staging
