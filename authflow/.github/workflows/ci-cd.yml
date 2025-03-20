@@ -28,6 +28,12 @@ jobs:
       - name: Build App
         run: yarn build
 
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: dist/ 
+
   deploy:
     name: Deploy to Staging
     runs-on: ubuntu-latest
@@ -36,6 +42,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-output
+          path: dist/ 
 
       - name: Deploy to Staging Server
         run: echo "Deploying to Staging Server..."
