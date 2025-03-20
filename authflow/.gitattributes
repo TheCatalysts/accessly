@@ -1,0 +1,16 @@
+# Normalize line endings
+*.{js,ts,vue,html,css,scss,md,json,yml,yaml,sh,txt} text eol=lf
+
+# Treat binary files properly
+*.{png,jpg,jpeg,gif,ico,pdf,ttf,woff,woff2} binary
+
+# Prevent diffs for minified files
+*.{min.js,min.css} binary
+
+# Handle lock files to reduce merge conflicts
+package-lock.json merge=union
+yarn.lock merge=union
+pnpm-lock.yaml merge=union
+
+# Ensure shell scripts have correct permissions
+*.sh diff=sh
